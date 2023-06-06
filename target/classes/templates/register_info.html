@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Status logowania</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="index.css" type="text/css" />
+</head>
+<body>
+  <div class="image">
+    <div class="image-shadow"></div>
+</div>
+  <div class="napis">
+    <h1>Witamy!</h1>
+    <h2 th:text="${imie}" />
+    <p th:text="${nazw}" />
+    <a href="/panel_klient">Zaloguj sie!</a>
+  </div>
+
+
+
+</body>
+</html>

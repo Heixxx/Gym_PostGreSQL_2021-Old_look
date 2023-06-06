@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Szczegolowa lista klientow</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" href="index.css" type="text/css" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"> </meta>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="index.css" type="text/css" />
+</head>
+<body>
+  <div class="image">
+    <div class="image-shadow"></div>
+</div>
+<div class="container">
+  <div class="table-responsive">
+    <table class="table table-bordered" style="color:white; text-align:center;">
+      <thead>
+      <tr style="margin-top:40px;" class="active">
+        <th style="background-color:grey;">Imie</th>
+        <th style="background-color:grey;">nazwisko</th>
+        <th style="background-color:grey;">Data urodzenia</th>
+        <th style="background-color:grey;">Data zapisania</th>
+        <th style="background-color:grey; color:red;">Data zakonczenia</th>
+        <th style="background-color:grey;">Numer</th>
+        <th style="background-color:grey;">Nazwa silowni</th>
+      </tr>
+
+      </thead>
+      <tbody>
+      <tr th:each ="klienci : ${list}">
+
+        <td style="background: rgba(0,0,0,0.6);" > <b  th:utext="${klienci.imie}">...</b> </td>
+        <td style="background: rgba(0,0,0,0.6);" > <b  th:utext="${klienci.nazwisko}">...</b> </td>
+        <td style="background: rgba(0,0,0,0.6);" > <b  th:utext="${klienci.data_urodzenia}">...</b> </td>
+        <td style="background: rgba(0,0,0,0.6);" > <b  th:utext="${klienci.data_zapisania}">...</b> </td>
+        <td style="background: rgba(0,0,0,0.6); color:red;" > <b  th:utext="${klienci.data_zakonczenia}">...</b> </td>
+        <td style="background: rgba(0,0,0,0.6);"> <b  th:utext="${klienci.nr_index}">...</b> </td>
+        <td style="background: rgba(0,0,0,0.6);"><b th:if="${klienci.silownia != null}" th:text="${klienci.silownia.nazwa}"></b></td>
+
+
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<button><a href="/panel_admin">Wróć</a></button>
+</body>
+</html>

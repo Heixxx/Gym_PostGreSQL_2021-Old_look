@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Lista awarii</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" href="index.css" type="text/css" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"> </meta>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="index.css" type="text/css" />
+
+</head>
+<body>
+  <div class="image">
+    <div class="image-shadow"></div>
+</div>
+<div class="container">
+  <div class="table-responsive">
+    <table class="table table-bordered" style="color:white; text-align:center;">
+      <thead>
+      <tr style="margin-top:40px;" class="active">
+        <th style="background-color:grey;">Opis awarii</th>
+        <th style="background-color:grey;">Czy naprawiono</th>
+        <th style="background-color:grey;">Data</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="przeglad : ${list}">
+        <td style="background: rgba(0,0,0,0.6);"><b th:text="${przeglad.Opiss}">...</b></td>
+        <td style="background: rgba(0,0,0,0.6);"><b th:text="${przeglad.awaria}">...</b></td>
+        <td style="background: rgba(0,0,0,0.6);"><b th:text="${przeglad.data_przegladu}">...</b></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<button><a href="/panel_admin">Wróć</a></button>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Lista klientow</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" href="index.css" type="text/css" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="index.css" type="text/css" />
+</head>
+<body>
+  <div class="image">
+    <div class="image-shadow"></div>
+</div>
+<div class="container">
+  <div class="table-responsive">
+    <table class="table table-bordered" style="color:white; text-align:center;">
+      <thead>
+        <tr style="margin-top:40px;" class="active">
+          <th style="background-color:grey;">Imie</th>
+          <th style="background-color:grey;">Numer</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="klient : ${klienci}">
+          <td style="background: rgba(0,0,0,0.6);">
+            <b th:text="${klient.imie}">...</b>
+          </td>
+          <td style="background: rgba(0,0,0,0.6);">
+            <b th:text="${klient.nr_index}">...</b>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<button><a href="/index.html">Wróć</a></button>
+</body>
+</html>

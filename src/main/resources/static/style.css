@@ -1,0 +1,19 @@
+﻿body {
+    text-align:center;
+    background-image: url("img/gym.jpg");
+    margin: 0px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.napis{
+    margin-top:50px;
+    color:white;
+    font-size:20px;
+
+}
+.dane_klienta{
+    text-align:right;
+}
+.form-group{
+    margin:10px;
+}

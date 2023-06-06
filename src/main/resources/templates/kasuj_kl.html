@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Kasowanie klienta</title>
+  <link rel="stylesheet" href="style.css" type="text/css" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" href="index.css" type="text/css" />
+
+</head>
+<body>
+        <div class="image" style="position: absolute; top: 0;">
+            <div class="image-shadow"></div>
+        </div>
+
+<form method="POST" th:object="${klient}">
+
+  <div class="backGround">
+
+    <h1 style="color: white; margin-top:60px;"> Rejestracja:</h1>
+
+    <div class="form-group">
+      <label class="napis"> Podaj numet klienta: </label>:
+      <input type="text" th:field="${klient.Nr_index}" value=""/><br/>
+    </div>
+
+
+    <input type="submit" value="Dodaj" />
+
+  </div>
+
+
+</form>
+
+
+
+</body>
+</html>
+
