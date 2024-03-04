@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 62.5%;
+  color: whitesmoke;
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+form {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(41, 41, 41);
+}
+form .login {
+  background-color: rgb(22, 22, 22);
+  padding: 6em;
+  border-radius: 10px;
+  font-size: 2rem;
+}
+form .login .title {
+  text-align: center;
+  font-size: 3rem;
+  padding-bottom: 0.2em;
+}
+form .login .form-group {
+  margin: 1em 0;
+}
+form .login .form-group .text {
+  font-size: 2rem;
+}
+form .login .form-group .inp {
+  width: 200px;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.6rem;
+  color: #000;
+}
+form .login .center {
+  width: 250px;
+  margin: 0 auto;
+  display: flex;
+}
+form .login .center .add {
+  width: 100%;
+  height: 35px;
+  color: whitesmoke;
+  text-align: center;
+  font-size: 1.6rem;
+  border: none;
+  background: none;
+  margin-left: 2em;
+  cursor: pointer;
+}
+form .login .center .return {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-size: 2rem;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+form .login .center .return:hover {
+  background-color: rgb(38, 230, 230);
+  color: #000;
+}/*# sourceMappingURL=login.css.map */
