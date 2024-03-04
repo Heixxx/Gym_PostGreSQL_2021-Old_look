@@ -1,19 +1,678 @@
-﻿body {
-    text-align:center;
-    background-image: url("img/gym.jpg");
-    margin: 0px;
-    font-family: 'Josefin Sans', sans-serif;
-}
-
-.napis{
-    margin-top:50px;
-    color:white;
-    font-size:20px;
-
-}
-.dane_klienta{
-    text-align:right;
-}
-.form-group{
-    margin:10px;
-}
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 62.5%;
+    color: whitesmoke;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    background: rgb(60, 216, 226);
+  }
+  
+  .wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  .special {
+    color: rgb(38, 230, 230);
+    text-decoration: none;
+  }
+  
+  .animation {
+    transform: translateX(101%);
+  }
+  
+  nav {
+    width: 100%;
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    height: 80px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 20%, rgba(0, 0, 0, 0.6) 100%);
+  }
+  nav .wrapper-pc {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  nav .wrapper-pc .nav-left,
+  nav .wrapper-pc .nav-right {
+    font-size: 1rem;
+    width: 100%;
+    text-transform: uppercase;
+  }
+  nav .wrapper-pc .nav-left a,
+  nav .wrapper-pc .nav-right a {
+    text-decoration: none;
+  }
+  nav .wrapper-pc .nav-left {
+    margin-left: 2em;
+  }
+  nav .wrapper-pc .nav-left .special {
+    font-size: 2.5rem;
+  }
+  nav .wrapper-pc .nav-left .logo {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+  }
+  nav .wrapper-pc .nav-right {
+    font-size: 0;
+    text-align: right;
+  }
+  nav .wrapper-pc .nav-right .link {
+    padding-right: 1em;
+  }
+  nav .wrapper-pc .nav-right a {
+    font-size: 2.2rem;
+    margin: 0 0.2em;
+    transition: color 0.2s;
+  }
+  nav .wrapper-pc .nav-right a:hover {
+    color: rgb(30, 200, 200);
+  }
+  nav .wrapper-mobi {
+    width: 90%;
+    height: 50px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  nav .wrapper-mobi .nav-left .logo {
+    font-size: 2rem;
+    text-decoration: none;
+  }
+  nav .wrapper-mobi .nav-left .logo .special {
+    font-size: 2rem;
+  }
+  nav .wrapper-mobi .nav-right .link {
+    text-decoration: none;
+    padding-right: 1em;
+  }
+  nav .wrapper-mobi .nav-right a {
+    font-size: 1.6rem;
+    margin: 0 0.2em;
+    transition: color 0.2s;
+  }
+  nav .wrapper-mobi .nav-right a:hover {
+    color: rgb(30, 200, 200);
+  }
+  nav .wrapper-mobi .nav-right .icon {
+    z-index: 1;
+    height: 60px;
+    width: 50px;
+    position: relative;
+  }
+  nav .wrapper-mobi .nav-right .icon .btn {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 30px;
+    width: 40px;
+    height: 1px;
+    right: 0%;
+    background-color: whitesmoke;
+  }
+  nav .wrapper-mobi .nav-right .icon .btn::after, nav .wrapper-mobi .nav-right .icon .btn::before {
+    position: absolute;
+    content: "";
+    top: 12px;
+    width: 40px;
+    height: 1px;
+    background-color: whitesmoke;
+  }
+  nav .wrapper-mobi .nav-right .icon .btn::before {
+    top: -12px;
+  }
+  nav .wrapper-mobi .nav-right--panel {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: rgba(2, 37, 37, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: transform 0.3s;
+  }
+  nav .wrapper-mobi .nav-right--panel .logo {
+    text-decoration: none;
+  }
+  nav .wrapper-mobi .nav-right--panel a {
+    text-transform: uppercase;
+    font-size: 2rem;
+    margin: 1em;
+  }
+  
+  main {
+    width: 100%;
+    height: 100vh;
+    max-height: 1400px;
+  }
+  main .img {
+    z-index: -1;
+    position: absolute;
+    background-image: url("../img/gym.jpg");
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    max-height: 1400px;
+  }
+  main .img .shadows {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  main .mainSection {
+    height: 100%;
+  }
+  main .mainSection .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 1.5rem;
+    height: 100%;
+  }
+  main .mainSection .wrapper .leftSide, main .mainSection .wrapper .rightSide {
+    width: 100%;
+    margin: 0 1em;
+    text-align: center;
+  }
+  main .mainSection .wrapper .leftSide {
+    text-align: center;
+    transform: translateY(-40%);
+    width: 90%;
+  }
+  main .mainSection .wrapper .leftSide__mainLogo {
+    font-size: 2rem;
+  }
+  main .mainSection .wrapper .leftSide__mainLogo .special {
+    font-size: 2rem;
+  }
+  main .mainSection .wrapper .leftSide__text {
+    padding-top: 0.5em;
+    font-size: 1.4rem;
+  }
+  main .mainSection .wrapper .leftSide__text .special {
+    font-size: 1.4rem;
+  }
+  main .mainSection .wrapper .rightSide {
+    transform: translateY(40%);
+    width: 90%;
+  }
+  main .mainSection .wrapper .rightSide .special {
+    font-size: 2rem;
+  }
+  main .mainSection .wrapper .rightSide__text {
+    font-size: 2rem;
+  }
+  main .mainSection .wrapper .rightSide__text .special {
+    font-size: 1.8rem;
+  }
+  main .mainSection .wrapper .rightSide .text2 {
+    padding: 1em;
+  }
+  main .mainSection .wrapper .rightSide .text2 span {
+    font-size: 1.6rem;
+  }
+  main .mainSection .wrapper .rightSide .text3 span {
+    font-size: 1.6rem;
+  }
+  main .infoSection {
+    min-height: 700px;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  main .infoSection .wrapper {
+    width: 90%;
+  }
+  main .infoSection .wrapper .first, main .infoSection .wrapper .sec, main .infoSection .wrapper .last {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 200px;
+    margin-bottom: 1em;
+  }
+  main .infoSection .wrapper .first img, main .infoSection .wrapper .sec img, main .infoSection .wrapper .last img {
+    height: 70%;
+    opacity: 0.8;
+    padding: 0.6em;
+  }
+  main .infoSection .wrapper .first .left, main .infoSection .wrapper .sec .left, main .infoSection .wrapper .last .left {
+    padding: 0.6em;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+  }
+  main .infoSection .wrapper .first .left .special, main .infoSection .wrapper .sec .left .special, main .infoSection .wrapper .last .left .special {
+    font-size: 1.5rem;
+  }
+  main .infoSection .wrapper .white {
+    background: linear-gradient(90deg, rgb(202, 202, 202) 0%, rgba(222, 222, 222, 0.3) 80%, rgba(255, 255, 255, 0) 100%);
+    font-size: 2rem;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  main .infoSection .wrapper .white .left {
+    color: rgb(10, 0, 0);
+  }
+  main .infoSection .wrapper .grey {
+    background: linear-gradient(-90deg, rgb(155, 155, 155) 0%, rgba(155, 155, 155, 0.3) 80%, rgba(155, 155, 155, 0) 100%);
+    font-size: 2rem;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  main .infoSection .wrapper .grey .left {
+    color: whitesmoke;
+  }
+  main .infoSection .wrapper .black {
+    background: linear-gradient(90deg, rgb(55, 55, 55) 0%, rgba(0, 0, 0, 0.3) 80%, rgba(255, 255, 255, 0) 100%);
+    font-size: 2rem;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  main .infoSection .wrapper .black .left {
+    color: whitesmoke;
+  }
+  main .contactSection {
+    width: 100%;
+    height: 600px;
+    background: linear-gradient(180deg, rgb(0, 0, 0) 0%, rgb(60, 216, 226) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  main .contactSection .wrapper {
+    width: 90%;
+    margin: 0 auto;
+  }
+  main .contactSection .wrapper .contactTitle {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 2rem;
+  }
+  main .contactSection .wrapper .container {
+    height: 400px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    flex-direction: column;
+  }
+  main .contactSection .wrapper .container__left, main .contactSection .wrapper .container__right {
+    width: 100%;
+    font-size: 1.6rem;
+  }
+  main .contactSection .wrapper .container__left--title, main .contactSection .wrapper .container__right--title {
+    font-size: 2rem;
+    text-transform: uppercase;
+    padding: 1em;
+  }
+  main .contactSection .wrapper .container__left--text, main .contactSection .wrapper .container__right--text {
+    font-size: 1.6rem;
+  }
+  
+  @media (min-width: 0px) {
+    nav .wrapper-pc {
+      display: none;
+    }
+  }
+  @media (min-width: 576px) {
+    .animation {
+      display: none;
+    }
+    nav .wrapper-mobi {
+      display: none;
+    }
+    nav .wrapper-mobi .nav-right--panel {
+      display: none;
+    }
+    nav .wrapper-pc {
+      display: flex;
+    }
+    nav .wrapper .nav-left,
+    nav .wrapper .nav-right {
+      font-size: 1rem;
+    }
+    nav .wrapper .nav-left {
+      width: 40%;
+      margin-left: 2em;
+    }
+    nav .wrapper .nav-left .special {
+      font-size: 2rem;
+    }
+    nav .wrapper .nav-left .logo {
+      font-size: 2rem;
+    }
+    nav .wrapper .nav-right {
+      font-size: 0;
+      text-align: right;
+    }
+    nav .wrapper .nav-right .link {
+      padding-right: 1em;
+    }
+    nav .wrapper .nav-right a {
+      font-size: 1.8rem;
+    }
+    main .mainSection .wrapper {
+      flex-direction: row;
+      font-size: 2rem;
+    }
+    main .mainSection .wrapper .leftSide {
+      text-align: center;
+      transform: translateY(-100%);
+    }
+    main .mainSection .wrapper .leftSide__mainLogo {
+      font-size: 2rem;
+    }
+    main .mainSection .wrapper .leftSide__mainLogo .special {
+      font-size: 2rem;
+    }
+    main .mainSection .wrapper .leftSide__text {
+      padding-top: 1em;
+      font-size: 1.6rem;
+    }
+    main .mainSection .wrapper .leftSide__text .special {
+      font-size: 1.6rem;
+    }
+    main .mainSection .wrapper .rightSide {
+      transform: translateY(100%);
+    }
+    main .mainSection .wrapper .rightSide .special {
+      font-size: 1.8rem;
+    }
+    main .mainSection .wrapper .rightSide__text {
+      font-size: 1.8rem;
+    }
+    main .mainSection .wrapper .rightSide__text a {
+      font-size: 1.4rem;
+    }
+    main .mainSection .wrapper .rightSide .text2 {
+      padding: 1em;
+    }
+    main .mainSection .wrapper .rightSide .text2 span {
+      font-size: 1.4rem;
+    }
+    main .infoSection .wrapper .first, main .infoSection .wrapper .sec, main .infoSection .wrapper .last {
+      width: 100%;
+      height: 250px;
+      margin-bottom: 1em;
+    }
+    main .infoSection .wrapper .first img, main .infoSection .wrapper .sec img, main .infoSection .wrapper .last img {
+      height: 80%;
+    }
+    main .infoSection .wrapper .first .left, main .infoSection .wrapper .sec .left, main .infoSection .wrapper .last .left {
+      font-size: 2rem;
+    }
+    main .infoSection .wrapper .first .left .special, main .infoSection .wrapper .sec .left .special, main .infoSection .wrapper .last .left .special {
+      color: rgb(38, 230, 230);
+      font-size: 2rem;
+    }
+    main .contactSection {
+      width: 100%;
+      height: 700px;
+      background: linear-gradient(180deg, rgb(0, 0, 0) 0%, rgb(60, 216, 226) 100%);
+    }
+    main .contactSection .wrapper {
+      width: 100%;
+    }
+    main .contactSection .wrapper .contactTitle {
+      padding: 1em;
+      text-transform: uppercase;
+      text-align: center;
+      font-size: 2.2rem;
+    }
+    main .contactSection .wrapper .container {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      text-align: center;
+    }
+    main .contactSection .wrapper .container__left, main .contactSection .wrapper .container__right {
+      width: 100%;
+      font-size: 1rem;
+    }
+    main .contactSection .wrapper .container__left--title, main .contactSection .wrapper .container__right--title {
+      font-size: 2.2rem;
+      text-transform: uppercase;
+      padding: 1em;
+    }
+    main .contactSection .wrapper .container__left--text, main .contactSection .wrapper .container__right--text {
+      font-size: 1.6rem;
+    }
+  }
+  @media (min-width: 768px) {
+    nav .wrapper .nav-left,
+    nav .wrapper .nav-right {
+      font-size: 1.2rem;
+    }
+    nav .wrapper .nav-left {
+      width: 40%;
+      margin-left: 2em;
+    }
+    nav .wrapper .nav-left .special {
+      font-size: 2.2rem;
+    }
+    nav .wrapper .nav-left .logo {
+      font-size: 2.2rem;
+    }
+    nav .wrapper .nav-right {
+      font-size: 0;
+      text-align: right;
+    }
+    nav .wrapper .nav-right .link {
+      padding-right: 1em;
+    }
+    nav .wrapper .nav-right a {
+      font-size: 2rem;
+    }
+    main .mainSection .wrapper {
+      font-size: 2rem;
+    }
+    main .mainSection .wrapper .leftSide {
+      text-align: center;
+      transform: translateY(-100%);
+    }
+    main .mainSection .wrapper .leftSide__mainLogo {
+      font-size: 2.4rem;
+    }
+    main .mainSection .wrapper .leftSide__mainLogo .special {
+      font-size: 2.4rem;
+    }
+    main .mainSection .wrapper .leftSide__text {
+      padding-top: 1em;
+      font-size: 2rem;
+    }
+    main .mainSection .wrapper .leftSide__text .special {
+      font-size: 2rem;
+    }
+    main .mainSection .wrapper .rightSide {
+      transform: translateY(100%);
+    }
+    main .mainSection .wrapper .rightSide .special {
+      font-size: 2rem;
+    }
+    main .mainSection .wrapper .rightSide__text {
+      font-size: 2rem;
+    }
+    main .mainSection .wrapper .rightSide__text a {
+      font-size: 1.6rem;
+    }
+    main .mainSection .wrapper .rightSide .text2 {
+      padding: 1em;
+    }
+    main .mainSection .wrapper .rightSide .text2 span {
+      font-size: 1.6rem;
+    }
+    main .infoSection .wrapper .first, main .infoSection .wrapper .sec, main .infoSection .wrapper .last {
+      width: 100%;
+      height: 320px;
+      margin-bottom: 1em;
+    }
+    main .infoSection .wrapper .first img, main .infoSection .wrapper .sec img, main .infoSection .wrapper .last img {
+      height: 80%;
+    }
+    main .infoSection .wrapper .first .left, main .infoSection .wrapper .sec .left, main .infoSection .wrapper .last .left {
+      font-size: 2rem;
+    }
+    main .infoSection .wrapper .first .left .special, main .infoSection .wrapper .sec .left .special, main .infoSection .wrapper .last .left .special {
+      color: rgb(38, 230, 230);
+      font-size: 2rem;
+    }
+    main .contactSection {
+      width: 100%;
+      height: 700px;
+      background: linear-gradient(180deg, rgb(0, 0, 0) 0%, rgb(60, 216, 226) 100%);
+    }
+    main .contactSection .wrapper {
+      width: 100%;
+    }
+    main .contactSection .wrapper .contactTitle {
+      padding: 1em;
+      text-transform: uppercase;
+      text-align: center;
+      font-size: 2.6rem;
+    }
+    main .contactSection .wrapper .container {
+      flex-direction: row;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      text-align: center;
+    }
+    main .contactSection .wrapper .container__left, main .contactSection .wrapper .container__right {
+      width: 100%;
+      font-size: 1rem;
+    }
+    main .contactSection .wrapper .container__left--title, main .contactSection .wrapper .container__right--title {
+      font-size: 2.6rem;
+      text-transform: uppercase;
+      padding: 1em;
+    }
+    main .contactSection .wrapper .container__left--text, main .contactSection .wrapper .container__right--text {
+      font-size: 1.8rem;
+    }
+  }
+  @media (min-width: 992px) {
+    nav .wrapper .nav-left {
+      width: 40%;
+      margin-left: 2em;
+    }
+    nav .wrapper .nav-left .special {
+      font-size: 2.6rem;
+    }
+    nav .wrapper .nav-left .logo {
+      font-size: 2.6rem;
+    }
+    nav .wrapper .nav-right {
+      font-size: 0;
+      text-align: right;
+    }
+    nav .wrapper .nav-right .link {
+      padding-right: 1em;
+    }
+    nav .wrapper .nav-right a {
+      font-size: 2.4rem;
+    }
+    main .mainSection .wrapper {
+      font-size: 2rem;
+    }
+    main .mainSection .wrapper .leftSide {
+      text-align: center;
+      transform: translateY(-100%);
+    }
+    main .mainSection .wrapper .leftSide__mainLogo {
+      font-size: 2.6rem;
+    }
+    main .mainSection .wrapper .leftSide__mainLogo .special {
+      font-size: 2.6rem;
+    }
+    main .mainSection .wrapper .leftSide__text {
+      padding-top: 1em;
+      font-size: 2.2rem;
+    }
+    main .mainSection .wrapper .leftSide__text .special {
+      font-size: 2.2rem;
+    }
+    main .mainSection .wrapper .rightSide {
+      transform: translateY(100%);
+    }
+    main .mainSection .wrapper .rightSide .special {
+      font-size: 2.2rem;
+    }
+    main .mainSection .wrapper .rightSide__text {
+      font-size: 2.2rem;
+    }
+    main .mainSection .wrapper .rightSide__text a {
+      font-size: 1.8rem;
+    }
+    main .mainSection .wrapper .rightSide .text2 {
+      padding: 1em;
+    }
+    main .mainSection .wrapper .rightSide .text2 span {
+      font-size: 1.8rem;
+    }
+    main .infoSection {
+      height: 1400px;
+    }
+    main .infoSection .wrapper .first, main .infoSection .wrapper .sec, main .infoSection .wrapper .last {
+      width: 100%;
+      height: 400px;
+      margin-bottom: 1em;
+    }
+    main .infoSection .wrapper .first img, main .infoSection .wrapper .sec img, main .infoSection .wrapper .last img {
+      height: 90%;
+      padding: 1em;
+    }
+    main .infoSection .wrapper .first .left, main .infoSection .wrapper .sec .left, main .infoSection .wrapper .last .left {
+      padding: 2em;
+      text-align: center;
+      font-size: 2.4rem;
+    }
+    main .infoSection .wrapper .first .left .special, main .infoSection .wrapper .sec .left .special, main .infoSection .wrapper .last .left .special {
+      color: rgb(38, 230, 230);
+      font-size: 2.4rem;
+    }
+    main .contactSection {
+      height: 700px;
+      background: linear-gradient(180deg, rgb(0, 0, 0) 0%, rgb(60, 216, 226) 100%);
+    }
+    main .contactSection .wrapper .contactTitle {
+      padding: 1em;
+      text-transform: uppercase;
+      text-align: center;
+      font-size: 2.8rem;
+    }
+    main .contactSection .wrapper .container {
+      flex-direction: row;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      text-align: center;
+    }
+    main .contactSection .wrapper .container__left, main .contactSection .wrapper .container__right {
+      width: 100%;
+      font-size: 1rem;
+    }
+    main .contactSection .wrapper .container__left--title, main .contactSection .wrapper .container__right--title {
+      font-size: 2.8rem;
+      text-transform: uppercase;
+      padding: 1em;
+    }
+    main .contactSection .wrapper .container__left--text, main .contactSection .wrapper .container__right--text {
+      font-size: 2rem;
+    }
+  }/*# sourceMappingURL=style.css.map */
