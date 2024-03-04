@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sklep komputerowy</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" href="./css/style.css" type="text/css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+            rel="stylesheet" />
+    </head>
+    <body>
+        <script>
+document.addEventListener('DOMContentLoaded', function() {
+
+    const btn = document.querySelector('.icon');
+    const panel = document.querySelector('.nav-right--panel');
+
+    function toggleClass() {
+        if (panel) {
+            panel.classList.toggle('animation');
+        }
+    }
+
+    if (btn) {
+        btn.addEventListener('click', toggleClass);
+    }
+
+    const links = document.querySelectorAll('.nav-right--panel .link');
+
+    function addAnimation() {
+        panel.classList.toggle('animation');
+    }
+
+    links.forEach(link => {
+        link.addEventListener('click', addAnimation);
+    });
+});
+        </script>
+        <nav>
+            <div class="wrapper-pc wrapper">
+                <div class="nav-left">
+                    <a href="#" class="logo"
+                        >Gym<span class="special">World</span></a
+                    >
+                </div>
+                <div class="nav-right">
+                    <a href="#about" class="aboutUs link">O siłowni</a>
+                    <a href="#contact" class="contact link">Kontakt</a>
+                    <a href="/logowanie" class="login link">Login</a>
+                </div>
+            </div>
+            <div class="wrapper-mobi">
+                <div class="nav-left">
+                    <a href="#" class="logo"
+                        >Gym<span class="special">World</span></a
+                    >
+                </div>
+                <div class="nav-right">
+                    <div class="icon">
+                        <div class="btn"></div>
+                    </div>
+                    <div class="nav-right--panel animation">
+                        <a href="#" class="logo link">UP</a>
+                        <a href="#about" class="aboutUs link">O siłowni</a>
+                        <a href="#contact" class="contact link">Kontakt</a>
+                        <a href="/logowanie" class="login link">Login</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <main>
+            <div class="img">
+                <div class="shadows"></div>
+            </div>
+            <section class="mainSection">
+                <div class="wrapper">
+                    <div class="leftSide">
+                        <h1 class="leftSide__mainLogo">
+                            GYM<span class="special">WORLD</span> - jedyny
+                            świat, który potrzebujesz
+                        </h1>
+                        <h2 class="leftSide__text">
+                            Posiadamy
+                            <span class="special">najlepszy</span> możliwy
+                            sprzęt do wielostawowych ćwiczeń
+                        </h2>
+                    </div>
+                    <div class="rightSide">
+                        <div>
+                            <span class="rightSide__text"
+                                >Jedyne <span class="special">50zł</span> za
+                                pierwszy miesiąc!</span
+                            >
+                        </div>
+                        <div class="text2">
+                            <span class="rightSide__text"
+                                >Przy rocznej subskrypcji
+                                <span class="special"
+                                    >oszczędzasz aż 250 zł!</span
+                                ></span
+                            >
+                        </div>
+                        <div class="text2 text3">
+                            <span class="rightSide__text"
+                                >Nie czekaj! Zmień sylwetkę
+                                <a href="#contact" class="special"
+                                    >JUŻ TERAZ!</a
+                                ></span
+                            >
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="infoSection" id="about">
+                <div class="wrapper">
+                    <div class="first white">
+                        <div class="left">
+                            Najlepszy sprzęt jaki można sobie wymarzyć jest
+                            tutaj!
+                        </div>
+                        <img src="./img/img1.png"></img>
+                    </div>
+                    <div class="sec grey">
+                        <img src="./img/img2.png"></img>
+                        <div class="left">
+                            Tylko u nas -
+                            <span class="special">najniższe ceny!</span>
+                        </div>
+                    </div>
+                    <div class="last black">
+                        <div class="left">
+                            Najlepszy sprzęt dla
+                            <span class="special">najlepszych</span> osób!
+                        </div>
+                        <img src="./img/img3.png"></img>
+                    </div>
+                </div>
+            </section>
+            <section class="contactSection" id="contact">
+                <div class="wrapper">
+                    <h2 class="contactTitle">Znajdziesz nas tutaj!</h2>
+                    <div class="container">
+                        <div class="container__left">
+                            <div class="container__left--title">
+                                Nasza siedziba:
+                            </div>
+                            <div class="container__left--text">
+                                Krosno, ul. Legionów 201
+                            </div>
+                            <div class="container__left--text">
+                                Telefon: 200 000 001
+                            </div>
+                        </div>
+                        <div class="container__right">
+                            <div class="container__right--title">
+                                Nasza firma:
+                            </div>
+                            <div class="container__right--text">
+                                NIP: 6536789012
+                            </div>
+                            <div class="container__right--text">
+                                Regon: 123987654
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>
