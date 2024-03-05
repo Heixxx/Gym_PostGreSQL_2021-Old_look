@@ -1,6 +1,7 @@
 # Gym new index look - 2024
 
 Main menu new look - 04.03.2024 (still old spring - 2021)
+https://heixxx.github.io/Gym_PostGreSQL_2022-Old_look/
 ![image](https://github.com/Heixxx/Gym_PostGreSQL_2022-Old_look/assets/101058402/5a69d673-2228-47c5-bf5a-4d1d8dc7cbf4)
 ![image](https://github.com/Heixxx/Gym_PostGreSQL_2022-Old_look/assets/101058402/2fdb8852-8075-4939-9b54-cb84805e96d7)
 
